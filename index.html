@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Premiere Securite</title>
-<meta name="description" content="Premiere Securite : ingénierie logicielle et conseil technologique. Intelligence artificielle appliquée, architecture de systèmes, solutions sur mesure, performance, sécurité et direction technique.">
+<meta name="description" content="Premiere Securite : sécurité et ingénierie pour l’IA en production. Revue de sécurité des agents IA et intégrations LLM à prix fixe, et solutions complètes sur mesure.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -162,6 +162,19 @@ footer.site { display: flex; justify-content: space-between; align-items: center
 .mono-ps { font-family: var(--serif); font-weight: 500; font-size: 1.9rem; line-height: 1; color: var(--ink); display: inline-flex; align-items: center; gap: 8px; }
 .mono-ps i { font-style: italic; }
 .mono-ps b { width: 1px; height: 0.8em; background: var(--ink); }
+
+/* Main offer */
+.offer { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 80px); border-top: 1px solid var(--ink); padding-top: 34px; }
+.offer h3 { font-size: var(--step-2); font-weight: 500; }
+.offer .meta { font-size: var(--step--1); font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-top: 14px; }
+.offer .keep { color: var(--muted); margin-top: 20px; max-width: 32em; }
+.offer .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+.deliver { list-style: none; margin: 0; padding: 0; }
+.deliver li { padding: 13px 0 13px 26px; border-bottom: 1px solid var(--line); position: relative; }
+.deliver li:first-child { border-top: 1px solid var(--line); }
+.deliver li::before { content: ""; position: absolute; left: 0; top: 1.45em; width: 12px; height: 1px; background: var(--accent); }
+.svc .actions { margin-top: 8px; }
+@media (max-width: 820px) { .offer { grid-template-columns: minmax(0, 1fr); } }
 </style>
 </head>
 <body>
@@ -170,9 +183,9 @@ footer.site { display: flex; justify-content: space-between; align-items: center
   <div class="wrap">
     <a class="mark" href="#top">PREMIERE SECURITE</a>
     <nav aria-label="Principal">
+      <a href="#offre" data-i18n="nav.offer">Offre</a>
       <a href="#services" data-i18n="nav.services">Services</a>
-      <a href="#approche" data-i18n="nav.approach">Approche</a>
-      <a href="#pourquoi" data-i18n="nav.why">Pourquoi nous</a>
+      <a href="#experience" data-i18n="nav.exp">Expérience</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
     <div class="lang" role="group" aria-label="Langue / Language">
@@ -185,24 +198,50 @@ footer.site { display: flex; justify-content: space-between; align-items: center
 <main class="wrap" id="top">
   <section class="hero">
     <div>
-      <p class="label" data-i18n="hero.eyebrow">Ingénierie logicielle et conseil technologique</p>
-      <h1 data-i18n="hero.title">Bien conçu dès le <em>départ</em>.</h1>
-      <p class="lede" data-i18n="hero.lede">Premiere Securite conçoit, construit et fait évoluer des systèmes logiciels fiables. Architecture, intelligence artificielle, développement sur mesure, performance, sécurité et direction technique : un seul partenaire, de l’analyse à la mise en production.</p>
+      <p class="label" data-i18n="hero.eyebrow">Sécurité et ingénierie pour l’IA en production</p>
+      <h1 data-i18n="hero.title">Mettez vos agents IA en production, <em>sans surprises</em>.</h1>
+      <p class="lede" data-i18n="hero.lede">Premiere Securite aide les startups et PME à sécuriser leurs agents, assistants et intégrations de modèles de langage : accès, données, coûts et qualité, avant que ça devienne un problème.</p>
       <div class="actions">
-        <a class="btn" href="#contact" data-i18n="cta.quote">Demander une soumission</a>
-        <a class="btn ghost" href="#services" data-i18n="cta.services">Voir les services</a>
+        <a class="btn" href="#contact" data-i18n="cta.book">Réserver une revue de sécurité IA</a>
+        <a class="btn ghost" href="#offre" data-i18n="cta.offer">Voir l’offre</a>
       </div>
     </div>
     <div class="index">
-      <span class="label" data-i18n="idx.title">Domaines d’expertise</span>
+      <span class="label" data-i18n="idx.title">Ce que nous faisons</span>
       <ul>
-        <li><a href="#svc-ai"><b data-i18n="svc.7.t">Intelligence artificielle appliquée</b><span aria-hidden="true">→</span></a></li>
-        <li><a href="#svc-arch"><b data-i18n="svc.1.t">Architecture de systèmes</b><span aria-hidden="true">→</span></a></li>
+        <li><a href="#offre"><b data-i18n="off.t">Revue de sécurité IA</b><span aria-hidden="true">→</span></a></li>
         <li><a href="#svc-custom"><b data-i18n="svc.2.t">Solutions sur mesure</b><span aria-hidden="true">→</span></a></li>
+        <li><a href="#svc-arch"><b data-i18n="svc.1.t">Architecture de systèmes</b><span aria-hidden="true">→</span></a></li>
         <li><a href="#svc-perf"><b data-i18n="svc.3.t">Performance et mise à l’échelle</b><span aria-hidden="true">→</span></a></li>
-        <li><a href="#svc-sec"><b data-i18n="svc.4.t">Sécurité et fiabilité</b><span aria-hidden="true">→</span></a></li>
         <li><a href="#svc-auto"><b data-i18n="svc.5.t">Automatisation et outillage</b><span aria-hidden="true">→</span></a></li>
         <li><a href="#svc-lead"><b data-i18n="svc.6.t">Direction technique</b><span aria-hidden="true">→</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="offre">
+    <div class="sec-head">
+      <div>
+        <p class="label" data-i18n="off.eyebrow">Offre principale</p>
+        <h2 data-i18n="off.title">Pour qui</h2>
+      </div>
+      <p data-i18n="off.who">Pour les équipes qui ont un agent ou un assistant IA en production, ou sur le point d’y être, et qui veulent savoir ce qu’il peut réellement faire avec leurs données et leurs systèmes.</p>
+    </div>
+    <div class="offer">
+      <div>
+        <h3 data-i18n="off.t">Revue de sécurité IA</h3>
+        <p class="meta" data-i18n="off.meta">2 semaines · prix fixe</p>
+        <p class="keep" data-i18n="off.keep">Vous gardez le rapport et le plan, que vous poursuiviez avec nous ou non.</p>
+        <div class="actions">
+          <a class="btn" href="#contact" data-i18n="cta.book">Réserver une revue de sécurité IA</a>
+        </div>
+      </div>
+      <ul class="deliver">
+        <li data-i18n="off.1">Modélisation des menaces de vos agents et intégrations LLM</li>
+        <li data-i18n="off.2">Revue des accès, des outils et des permissions de l’agent</li>
+        <li data-i18n="off.3">Analyse des fuites de données possibles (prompts, contexte, journaux)</li>
+        <li data-i18n="off.4">Tests d’injection de requêtes et d’abus d’outils</li>
+        <li data-i18n="off.5">Rapport avec constats classés par risque et plan de correction réaliste</li>
       </ul>
     </div>
   </section>
@@ -211,36 +250,27 @@ footer.site { display: flex; justify-content: space-between; align-items: center
     <div class="sec-head">
       <div>
         <p class="label" data-i18n="svc.eyebrow">Services</p>
-        <h2 data-i18n="svc.title">Ce que nous faisons pour vous</h2>
+        <h2 data-i18n="svc.title">Nous construisons aussi</h2>
       </div>
-      <p data-i18n="svc.intro">Des mandats ciblés ou un accompagnement continu, toujours avec des livrables concrets. Nous travaillons directement avec vos équipes de développement, d’infrastructure et de produit.</p>
+      <p data-i18n="svc.intro">Après la revue, ou pour un nouveau projet : nous concevons et livrons, avec vos équipes, des systèmes où la sécurité fait partie du design.</p>
     </div>
     <div class="services">
-      <div class="svc feature" id="svc-ai">
-        <p class="tag" data-i18n="svc.7.tag">Nouveau</p>
-        <h3 data-i18n="svc.7.t">Intelligence artificielle appliquée</h3>
-        <p data-i18n="svc.7.d">Nous intégrons l’IA là où elle apporte une valeur mesurable : assistants et agents connectés à vos données, automatisation de processus, recherche dans vos documents. Choix des modèles, évaluation de la qualité, maîtrise des coûts et protection des données font partie du mandat, pour passer du prototype à la production en toute confiance.</p>
-        <ul><li data-i18n="svc.7.a">Agents et assistants</li><li data-i18n="svc.7.b">Intégration de modèles de langage</li><li data-i18n="svc.7.c">Évaluation et gouvernance</li><li data-i18n="svc.7.e">Stratégie IA</li></ul>
+      <div class="svc feature" id="svc-custom">
+        <p class="tag" data-i18n="svc.2.tag">De l’analyse à la mise en production</p>
+        <h3 data-i18n="svc.2.t">Solutions sur mesure</h3>
+        <p data-i18n="svc.2.d">Votre besoin ne correspond à aucun produit existant ? Nous concevons et construisons des solutions complètes sur mesure, intégrées à vos systèmes : architecture, développement, intégrations IA et mise en production. Sécurité et fiabilité incluses dès le départ.</p>
+        <ul><li data-i18n="svc.2.a">Développement</li><li data-i18n="svc.2.b">Intégrations IA</li><li data-i18n="svc.2.c">Du prototype à la production</li></ul>
+        <div class="actions"><a class="btn ghost" href="#contact" data-i18n="cta.project">Parlons de votre projet</a></div>
       </div>
       <div class="svc" id="svc-arch">
         <h3 data-i18n="svc.1.t">Architecture de systèmes</h3>
         <p data-i18n="svc.1.d">Conception de systèmes évolutifs et performants, ou revue de votre architecture actuelle. Vous obtenez des choix techniques clairs, justifiés et adaptés à votre croissance.</p>
         <ul><li data-i18n="svc.1.a">Conception</li><li data-i18n="svc.1.b">Revue d’architecture</li><li data-i18n="svc.1.c">Infonuagique</li></ul>
       </div>
-      <div class="svc" id="svc-custom">
-        <h3 data-i18n="svc.2.t">Solutions sur mesure</h3>
-        <p data-i18n="svc.2.d">Votre besoin ne correspond à aucun produit existant ? Nous concevons et construisons des solutions sur mesure pour les cas complexes, de l’architecture à la mise en production, intégrées à vos systèmes.</p>
-        <ul><li data-i18n="svc.2.a">Développement</li><li data-i18n="svc.2.b">Intégrations</li><li data-i18n="svc.2.c">Du prototype à la production</li></ul>
-      </div>
       <div class="svc" id="svc-perf">
         <h3 data-i18n="svc.3.t">Performance et mise à l’échelle</h3>
         <p data-i18n="svc.3.d">Diagnostic des goulots d’étranglement et refonte des composants critiques pour supporter plus d’utilisateurs et plus de trafic, à coût maîtrisé.</p>
         <ul><li data-i18n="svc.3.a">Tests de charge</li><li data-i18n="svc.3.b">Observabilité</li><li data-i18n="svc.3.c">Coûts infonuagiques</li></ul>
-      </div>
-      <div class="svc" id="svc-sec">
-        <h3 data-i18n="svc.4.t">Sécurité et fiabilité</h3>
-        <p data-i18n="svc.4.d">Revue de vos applications et de vos flux de données. Vous recevez des constats classés par risque et un plan de correction réaliste, intégré à votre façon de travailler.</p>
-        <ul><li data-i18n="svc.4.a">Analyse des risques</li><li data-i18n="svc.4.b">Revue de code</li><li data-i18n="svc.4.c">Gestion des accès</li></ul>
       </div>
       <div class="svc" id="svc-auto">
         <h3 data-i18n="svc.5.t">Automatisation et outillage</h3>
@@ -251,6 +281,24 @@ footer.site { display: flex; justify-content: space-between; align-items: center
         <h3 data-i18n="svc.6.t">Direction technique</h3>
         <p data-i18n="svc.6.d">Encadrement d’équipes multidisciplinaires sur un projet difficile : cadrage, décisions d’architecture, expérience utilisateur et accompagnement des développeurs jusqu’à la mise en production.</p>
         <ul><li data-i18n="svc.6.a">Leadership technique</li><li data-i18n="svc.6.b">Mentorat</li><li data-i18n="svc.6.c">Feuille de route</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="experience">
+    <div class="why">
+      <div>
+        <p class="label" data-i18n="exp.eyebrow">Expérience</p>
+        <h2 data-i18n="exp.title">Une expérience bâtie en <em>production</em></h2>
+      </div>
+      <div>
+        <p class="intro" data-i18n="exp.intro">Des systèmes conçus, sécurisés et opérés à grande échelle, pas seulement en démo.</p>
+        <ul class="focus">
+          <li><strong data-i18n="exp.1.t">Leader mondial du logiciel</strong><span data-i18n="exp.1.d">Ingénierie principale, plateformes de confiance et sécurité.</span></li>
+          <li><strong data-i18n="exp.2.t">Santé numérique</strong><span data-i18n="exp.2.d">Plateforme de données de santé (Medeloop) : authentification, infrastructure multi-locataire et intégrations IA.</span></li>
+          <li><strong data-i18n="exp.3.t">Sécurité</strong><span data-i18n="exp.3.d">Ingénierie de sécurité, y compris la sécurité des agents IA.</span></li>
+          <li><strong data-i18n="exp.4.t">Livraison complète</strong><span data-i18n="exp.4.d">Systèmes d’authentification, plateformes multi-locataires, intégrations LLM, de la conception à la production.</span></li>
+        </ul>
       </div>
     </div>
   </section>
@@ -271,30 +319,12 @@ footer.site { display: flex; justify-content: space-between; align-items: center
     </ol>
   </section>
 
-  <section class="block" id="pourquoi">
-    <div class="why">
-      <div>
-        <p class="label" data-i18n="why.eyebrow">Pourquoi Premiere Securite</p>
-        <h2 data-i18n="why.title">Des systèmes conçus pour <em>durer</em></h2>
-      </div>
-      <div>
-        <p class="intro" data-i18n="why.intro">Nous concevons des systèmes évolutifs et performants, et nous dirigeons les équipes qui les construisent. Nous misons sur l’automatisation, l’intelligence artificielle et un outillage avancé pour résoudre les problèmes complexes.</p>
-        <ul class="focus">
-          <li><strong data-i18n="why.f1.t">Passer à l’échelle</strong><span data-i18n="why.f1.d">Des solutions conçues pour des organisations présentes dans plusieurs pays.</span></li>
-          <li><strong data-i18n="why.f2.t">Améliorer l’expérience</strong><span data-i18n="why.f2.d">Des systèmes rapides et simples pour vos utilisateurs comme pour vos développeurs.</span></li>
-          <li><strong data-i18n="why.f3.t">Réduire les risques</strong><span data-i18n="why.f3.d">Moins d’erreurs humaines, moins de surprises en production, des contrôles vérifiables.</span></li>
-          <li><strong data-i18n="why.f4.t">Garder le contrôle</strong><span data-i18n="why.f4.d">Tout ce que nous livrons est documenté et remis à vos équipes.</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
   <section class="block" id="contact">
     <div class="contact">
       <div>
-        <p class="label" data-i18n="ct.eyebrow">Soumission</p>
+        <p class="label" data-i18n="ct.eyebrow">Contact</p>
         <h2 data-i18n="ct.title">Parlons de votre projet</h2>
-        <p data-i18n="ct.intro">Écrivez-nous par courriel. Nous répondons avec une proposition et une estimation dans un délai de deux jours ouvrables.</p>
+        <p data-i18n="ct.intro">Une revue de sécurité IA ou un projet sur mesure ? Écrivez-nous. Nous répondons avec une proposition et une estimation dans un délai de deux jours ouvrables.</p>
         <div class="email-row">
           <span class="email" id="email-text">hello@premieresec.com</span>
           <button class="btn" type="button" id="copy-email" data-i18n="ct.copy">Copier l’adresse</button>
@@ -306,7 +336,7 @@ footer.site { display: flex; justify-content: space-between; align-items: center
         <p class="label" data-i18n="ct.inc">À inclure dans votre courriel</p>
         <ul class="include">
           <li data-i18n="ct.i1">Votre organisation et votre rôle</li>
-          <li data-i18n="ct.i2">Le système ou le projet concerné</li>
+          <li data-i18n="ct.i2">Le système, l’agent ou le projet concerné</li>
           <li data-i18n="ct.i3">Le problème ou l’objectif principal</li>
           <li data-i18n="ct.i4">Vos échéances et contraintes connues</li>
         </ul>
@@ -317,65 +347,67 @@ footer.site { display: flex; justify-content: space-between; align-items: center
 
 <footer class="site wrap">
   <span class="foot-id"><span class="mono-ps" aria-hidden="true">P<b></b><i>S</i></span><span>© <span id="year">2026</span> Premiere Securite</span></span>
-  <span data-i18n="ft.tag">Ingénierie logicielle et conseil technologique</span>
+  <span data-i18n="ft.tag">Sécurité et ingénierie pour l’IA en production</span>
 </footer>
-
 <script>
 (function () {
   // Change this one value to set the quote email everywhere on the page.
   var EMAIL = "hello@premieresec.com";
 
   var EN = {
-    "nav.services": "Services", "nav.approach": "Approach", "nav.why": "Why us", "nav.contact": "Contact",
-    "hero.eyebrow": "Software engineering and technology consulting",
-    "hero.title": "Built right from the <em>first</em> version.",
-    "hero.lede": "Premiere Securite designs, builds and evolves reliable software systems. Architecture, artificial intelligence, custom development, performance, security and technical leadership: one partner, from the first plan to global scale.",
-    "cta.quote": "Request a quote", "cta.services": "See services",
-    "idx.title": "Areas of expertise",
-    "svc.eyebrow": "Services", "svc.title": "What we do for you",
-    "svc.intro": "Focused engagements or ongoing support, always with concrete deliverables. We work directly with your development, infrastructure and product teams.",
+    "nav.offer": "Offer", "nav.services": "Services", "nav.exp": "Experience", "nav.contact": "Contact",
+    "hero.eyebrow": "Security and engineering for AI in production",
+    "hero.title": "Ship your AI agents to production, <em>without surprises</em>.",
+    "hero.lede": "Premiere Securite helps startups and SMBs secure their agents, assistants and LLM integrations: access, data, cost and quality, before any of it becomes a problem.",
+    "cta.book": "Book an AI security review", "cta.offer": "See the offer", "cta.project": "Let’s talk about your project",
+    "idx.title": "What we do",
+    "off.eyebrow": "Main offer", "off.title": "Who it’s for",
+    "off.who": "For teams with an AI agent or assistant in production, or about to be, who want to know what it can actually do with their data and systems.",
+    "off.t": "AI Security Review", "off.meta": "2 weeks · fixed price",
+    "off.keep": "You keep the report and the plan, whether or not you continue with us.",
+    "off.1": "Threat model of your agents and LLM integrations",
+    "off.2": "Review of the agent’s access, tools and permissions",
+    "off.3": "Analysis of possible data leaks (prompts, context, logs)",
+    "off.4": "Prompt injection and tool abuse testing",
+    "off.5": "Report with risk-ranked findings and a realistic remediation plan",
+    "svc.eyebrow": "Services", "svc.title": "We build, too",
+    "svc.intro": "After the review, or for a new project: we design and deliver, with your teams, systems where security is part of the design.",
+    "svc.2.tag": "From analysis to production", "svc.2.t": "Custom solutions",
+    "svc.2.d": "Need something no existing product does? We design and build complete custom solutions that fit your systems: architecture, development, AI integrations and deployment. Security and reliability built in from day one.",
+    "svc.2.a": "Development", "svc.2.b": "AI integrations", "svc.2.c": "Prototype to production",
     "svc.1.t": "Systems architecture",
     "svc.1.d": "Designing scalable, high-performance systems, or reviewing the architecture you have. You get clear, justified technical choices that fit your growth.",
     "svc.1.a": "Design", "svc.1.b": "Architecture review", "svc.1.c": "Cloud",
-    "svc.2.t": "Custom solutions",
-    "svc.2.d": "Does your need fit no existing product? We design and build custom solutions for complex use cases, from architecture to production, integrated with your systems.",
-    "svc.2.a": "Development", "svc.2.b": "Integrations", "svc.2.c": "Prototype to production",
     "svc.3.t": "Performance and scaling",
     "svc.3.d": "Find the bottlenecks and rework critical components so they handle more users and more traffic at a controlled cost.",
     "svc.3.a": "Load testing", "svc.3.b": "Observability", "svc.3.c": "Cloud costs",
-    "svc.4.t": "Security and reliability",
-    "svc.4.d": "A review of your applications and data flows. You get risk-ranked findings and a realistic remediation plan that fits the way you work.",
-    "svc.4.a": "Risk analysis", "svc.4.b": "Code review", "svc.4.c": "Access management",
     "svc.5.t": "Automation and tooling",
     "svc.5.d": "We automate repetitive work and build the internal tooling that makes your teams faster and your releases safer.",
     "svc.5.b": "Internal tooling", "svc.5.c": "Workflows",
     "svc.6.t": "Technical leadership",
     "svc.6.d": "Leading cross-functional teams through a hard project: scoping, architecture decisions, user experience and coaching developers all the way to production.",
     "svc.6.a": "Tech leadership", "svc.6.b": "Mentoring", "svc.6.c": "Roadmap",
-    "svc.7.tag": "New", "svc.7.t": "Applied AI",
-    "svc.7.d": "We bring AI in where it delivers measurable value: assistants and agents connected to your data, process automation, search across your documents. Model selection, quality evaluation, cost control and data protection are part of the engagement, so you go from prototype to production with confidence.",
-    "svc.7.a": "Agents and assistants", "svc.7.b": "Language model integration", "svc.7.c": "Evaluation and governance", "svc.7.e": "AI strategy",
+    "exp.eyebrow": "Experience", "exp.title": "Experience built in <em>production</em>",
+    "exp.intro": "Systems designed, secured and run at scale, not just in a demo.",
+    "exp.1.t": "Global software leader", "exp.1.d": "Principal engineering, trust and security platforms.",
+    "exp.2.t": "Digital health", "exp.2.d": "Health data platform (Medeloop): authentication, multi-tenant infrastructure and AI integrations.",
+    "exp.3.t": "Security", "exp.3.d": "Security engineering, including AI agent security.",
+    "exp.4.t": "End-to-end delivery", "exp.4.d": "Auth systems, multi-tenant platforms, LLM integrations, from design to production.",
     "ap.eyebrow": "Approach", "ap.title": "How an engagement works",
     "ap.intro": "Every step produces a deliverable you keep, even if the engagement stops there.",
     "ap.1.t": "Assessment", "ap.1.d": "Interviews and a review of what exists. You get a clear view of your systems, risks and priorities.",
     "ap.2.t": "Plan", "ap.2.d": "Options are weighed by value and effort. We agree on what matters first.",
     "ap.3.t": "Delivery", "ap.3.d": "Design, development and rollout, with your teams, in small, verifiable increments.",
     "ap.4.t": "Handover", "ap.4.d": "Documentation, training and tooling handed to your teams so they stay self-sufficient.",
-    "why.eyebrow": "Why Premiere Securite", "why.title": "Systems built to <em>last</em>",
-    "why.intro": "We design scalable, high-performance systems and lead the teams that build them. We rely on automation, artificial intelligence and advanced tooling to solve complex problems.",
-    "why.f1.t": "Scale", "why.f1.d": "Solutions built for organizations operating across many countries.",
-    "why.f2.t": "Improve the experience", "why.f2.d": "Systems that are fast and simple for your users and your developers alike.",
-    "why.f3.t": "Reduce risk", "why.f3.d": "Fewer human errors, fewer surprises in production, controls you can verify.",
-    "why.f4.t": "Stay in control", "why.f4.d": "Everything we deliver is documented and handed over to your teams.",
-    "ct.eyebrow": "Quote", "ct.title": "Let’s talk about your project",
-    "ct.intro": "Send us an email. We reply with a proposal and an estimate within two business days.",
+    "ct.eyebrow": "Contact", "ct.title": "Let’s talk about your project",
+    "ct.intro": "An AI security review or a custom project? Send us an email. We reply with a proposal and an estimate within two business days.",
     "ct.copy": "Copy address", "ct.open": "Open my email app",
     "ct.inc": "Include in your email",
-    "ct.i1": "Your organization and your role", "ct.i2": "The system or project involved",
+    "ct.i1": "Your organization and your role", "ct.i2": "The system, agent or project involved",
     "ct.i3": "The main problem or goal", "ct.i4": "Your deadlines and known constraints",
-    "ft.tag": "Software engineering and technology consulting"
+    "ft.tag": "Security and engineering for AI in production"
   };
-  var SUBJECT = { fr: "Demande de soumission – Premiere Securite", en: "Quote request – Premiere Securite" };
+  var SUBJECT = { fr: "Demande – Premiere Securite", en: "Inquiry – Premiere Securite" };
   var MSG = { fr: "Adresse copiée.", en: "Address copied.", frFail: "Copie impossible ici. L’adresse est sélectionnée, faites Cmd/Ctrl+C.", enFail: "Couldn’t copy here. The address is selected; press Cmd/Ctrl+C." };
 
   var nodes = document.querySelectorAll("[data-i18n]");
