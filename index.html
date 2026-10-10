@@ -175,6 +175,16 @@ footer.site { display: flex; justify-content: space-between; align-items: center
 .deliver li::before { content: ""; position: absolute; left: 0; top: 1.45em; width: 12px; height: 1px; background: var(--accent); }
 .svc .actions { margin-top: 8px; }
 @media (max-width: 820px) { .offer { grid-template-columns: minmax(0, 1fr); } }
+
+/* Experience */
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 4vw, 48px); border-top: 1px solid var(--ink); padding-top: 28px; margin-bottom: clamp(36px, 5vw, 56px); }
+.stats div { display: grid; gap: 8px; align-content: start; min-width: 0; }
+.stats b { font-family: var(--serif); font-weight: 500; font-size: clamp(2.4rem, 5vw, 3.4rem); line-height: 1; color: var(--accent); }
+.stats span { color: var(--muted); max-width: 18em; }
+.wins { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(32px, 6vw, 80px); }
+.wins li { border-top: 1px solid var(--line); padding-block: 20px 24px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.wins .tag { font-size: var(--step--1); font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+@media (max-width: 760px) { .stats, .wins { grid-template-columns: minmax(0, 1fr); } }
 </style>
 </head>
 <body>
@@ -286,21 +296,26 @@ footer.site { display: flex; justify-content: space-between; align-items: center
   </section>
 
   <section class="block" id="experience">
-    <div class="why">
+    <div class="sec-head">
       <div>
         <p class="label" data-i18n="exp.eyebrow">Expérience</p>
         <h2 data-i18n="exp.title">Une expérience bâtie en <em>production</em></h2>
       </div>
-      <div>
-        <p class="intro" data-i18n="exp.intro">Des systèmes conçus, sécurisés et opérés à grande échelle, pas seulement en démo.</p>
-        <ul class="focus">
-          <li><strong data-i18n="exp.1.t">Leader mondial du logiciel</strong><span data-i18n="exp.1.d">Ingénierie principale, plateformes de confiance et sécurité.</span></li>
-          <li><strong data-i18n="exp.2.t">Santé numérique</strong><span data-i18n="exp.2.d">Plateforme de données de santé : authentification, infrastructure multi-entité et intégrations IA.</span></li>
-          <li><strong data-i18n="exp.3.t">Sécurité</strong><span data-i18n="exp.3.d">Ingénierie de sécurité, y compris la sécurité des agents IA.</span></li>
-          <li><strong data-i18n="exp.4.t">Livraison complète</strong><span data-i18n="exp.4.d">Systèmes d’authentification, plateformes multi-entités, intégrations LLM, de la conception à la production.</span></li>
-        </ul>
-      </div>
+      <p data-i18n="exp.intro">Ingénierie de sécurité et de plateforme, de la cyberdéfense gouvernementale à l’IA en production.</p>
     </div>
+    <div class="stats">
+      <div><b>14+</b><span data-i18n="exp.s1">ans en sécurité et en ingénierie de plateforme</span></div>
+      <div><b>99,9999&nbsp;%</b><span data-i18n="exp.s2">de disponibilité pour un système de gestion des accès critique</span></div>
+      <div><b>40×</b><span data-i18n="exp.s3">plus rapide après la refonte d’un service de privilèges temporaires</span></div>
+    </div>
+    <ul class="wins">
+      <li><span class="tag" data-i18n="exp.1.t">Gestion des accès</span><p data-i18n="exp.1.d">Refonte d’un portail de gestion des accès en architecture active-active et mise en place d’un modèle sans privilèges permanents, réduisant la surface d’attaque de toute la chaîne de développement.</p></li>
+      <li><span class="tag" data-i18n="exp.2.t">IAM infonuagique</span><p data-i18n="exp.2.d">Intégration d’AWS IAM Identity Center avec Okta : contrôle d’accès par attributs, accès consolidés et élimination des utilisateurs et clés IAM.</p></li>
+      <li><span class="tag" data-i18n="exp.3.t">IA en production</span><p data-i18n="exp.3.d">Conception sécurisée d’une intégration ChatGPT, avec isolation des données et contrôles de sécurité des API, qui a ouvert un nouveau canal d’acquisition.</p></li>
+      <li><span class="tag" data-i18n="exp.4.t">Plateforme multi-entité</span><p data-i18n="exp.4.d">Fondation de plateforme couvrant organisations, authentification et autorisation, réutilisée par les équipes produit pour livrer plus vite.</p></li>
+      <li><span class="tag" data-i18n="exp.5.t">Détection et réponse</span><p data-i18n="exp.5.d">Console d’opérations en temps réel pour les équipes de réponse aux incidents, agent sécurisé en Rust et migration de services backend de Python vers Go.</p></li>
+      <li><span class="tag" data-i18n="exp.6.t">Cyberdéfense</span><p data-i18n="exp.6.d">Développement en cyberdéfense pour le gouvernement canadien et des partenaires internationaux.</p></li>
+    </ul>
   </section>
 
   <section class="block" id="approche">
@@ -388,11 +403,16 @@ footer.site { display: flex; justify-content: space-between; align-items: center
     "svc.6.d": "Leading cross-functional teams through a hard project: scoping, architecture decisions, user experience and coaching developers all the way to production.",
     "svc.6.a": "Tech leadership", "svc.6.b": "Mentoring", "svc.6.c": "Roadmap",
     "exp.eyebrow": "Experience", "exp.title": "Experience built in <em>production</em>",
-    "exp.intro": "Systems designed, secured and run at scale, not just in a demo.",
-    "exp.1.t": "Global software leader", "exp.1.d": "Principal engineering, trust and security platforms.",
-    "exp.2.t": "Digital health", "exp.2.d": "Health data platform: authentication, multi-tenant infrastructure and AI integrations.",
-    "exp.3.t": "Security", "exp.3.d": "Security engineering, including AI agent security.",
-    "exp.4.t": "End-to-end delivery", "exp.4.d": "Auth systems, multi-tenant platforms, LLM integrations, from design to production.",
+    "exp.intro": "Security and platform engineering, from government cyber defence to AI in production.",
+    "exp.s1": "years in security and platform engineering",
+    "exp.s2": "availability for a critical access management system",
+    "exp.s3": "faster after redesigning a temporary-privilege service",
+    "exp.1.t": "Access management", "exp.1.d": "Redesigned an access management portal as an active-active system and rolled out a zero-standing-privileges model, shrinking the attack surface of the entire development stack.",
+    "exp.2.t": "Cloud IAM", "exp.2.d": "Integrated AWS IAM Identity Center with Okta: attribute-based access control, consolidated access and no more IAM users or keys.",
+    "exp.3.t": "AI in production", "exp.3.d": "Secure design of a ChatGPT integration, with data isolation and API security controls, that opened a new acquisition channel.",
+    "exp.4.t": "Multi-tenant platform", "exp.4.d": "Platform foundation covering organizations, authentication and authorization, reused by product teams to ship faster.",
+    "exp.5.t": "Detection and response", "exp.5.d": "Real-time operations console for incident responders, a hardened Rust agent, and backend services migrated from Python to Go.",
+    "exp.6.t": "Cyber defence", "exp.6.d": "Cyber defence development for the Canadian government and international partners.",
     "ap.eyebrow": "Approach", "ap.title": "How an engagement works",
     "ap.intro": "Every step produces a deliverable you keep, even if the engagement stops there.",
     "ap.1.t": "Assessment", "ap.1.d": "Interviews and a review of what exists. You get a clear view of your systems, risks and priorities.",
