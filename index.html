@@ -186,6 +186,7 @@ footer.site { display: flex; justify-content: space-between; align-items: center
 .sectors li { font-size: var(--step--1); letter-spacing: 0.08em; text-transform: uppercase; padding-left: 20px; position: relative; }
 .sectors li::before { content: ""; position: absolute; left: 0; top: 0.75em; width: 10px; height: 1px; background: var(--accent); }
 @media (max-width: 820px) { .sectors { grid-template-columns: minmax(0, 1fr); } }
+.hero .origin { margin-top: 28px; padding-top: 14px; border-top: 1px solid var(--line); max-width: 34em; font-size: var(--step--1); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
 </style>
 </head>
 <body>
@@ -216,6 +217,7 @@ footer.site { display: flex; justify-content: space-between; align-items: center
         <a class="btn" href="#contact" data-i18n="cta.book">Réserver une revue de sécurité IA</a>
         <a class="btn ghost" href="#offre" data-i18n="cta.offer">Voir l’offre</a>
       </div>
+      <p class="origin" data-i18n="hero.origin">Entreprise canadienne · Montréal, Québec</p>
     </div>
     <div class="index">
       <span class="label" data-i18n="idx.title">Ce que nous faisons</span>
@@ -382,6 +384,7 @@ footer.site { display: flex; justify-content: space-between; align-items: center
     "hero.eyebrow": "Security and engineering for AI in production",
     "hero.title": "Ship your AI agents to production, <em>without surprises</em>.",
     "hero.lede": "Premiere Securite helps startups and SMBs secure their agents, assistants and LLM integrations: access, data, cost and quality, before any of it becomes a problem.",
+    "hero.origin": "Canadian company · Montréal, Québec",
     "cta.book": "Book an AI security review", "cta.offer": "See the offer", "cta.project": "Let’s talk about your project",
     "idx.title": "What we do",
     "off.eyebrow": "Main offer", "off.title": "Who it’s for",
